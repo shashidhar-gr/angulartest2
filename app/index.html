@@ -5,7 +5,23 @@
 </head>
 <body>
 <div ng-controller = "simpleController">
-	{{title}}
+	<header><h1>{{title}}</h1></header>
+
+	<section>
+		<form ng-submit = addDestination()>
+			City: <input type="text" name="city" ng-model = "newDestination.city">
+			Country: <input type="text" name="country" ng-model = "newDestination.country">
+			<input type="submit" name="Add">
+		</form>
+	</section>
+
+	<section>
+		<h2>Destination lists</h2>
+		<ol>
+			<li ng-repeat = "dest in destination">city: {{dest.city}}  country: {{dest.country}}</li>
+		</ol>
+	</section>
+
 </div>
 <script type="text/javascript" src = "bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src = "js/app.js"></script>
